@@ -3,7 +3,7 @@
     <v-footer :padless="padless">
       <v-card flat width="100%" class="grey lighten-3 text-center">
         <v-card-text>
-          <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
+          <v-btn v-for="icon in icons" :key="icon" class="mx-4 footer-icon" icon>
             <v-icon size="24px">{{ icon }}</v-icon>
           </v-btn>
         </v-card-text>
@@ -28,3 +28,10 @@ export default {
   })
 };
 </script>
+
+<style scoped>
+.footer-icon:hover {
+  transform: scale(1.2);
+  transition: ease-in-out 0.3s;
+}
+</style>

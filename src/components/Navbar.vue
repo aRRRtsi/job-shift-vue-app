@@ -12,24 +12,26 @@
         width="30"
       />
 
-      <v-toolbar-title class="text-uppercase d-none d-md-flex">{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="text-uppercase d-none d-md-flex">
+        <router-link class="toolbar-title" to="/">{{ title }}</router-link>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <v-btn-toggle class="d-none d-md-flex" v-model="text" color="accent-3" group>
-        <v-btn x-large>Työvuorot</v-btn>
+        <v-btn x-large to="/tyovuorot">Työvuorot</v-btn>
 
-        <v-btn x-large>Matkalukut</v-btn>
+        <v-btn x-large to="/matkakulut">Matkalukut</v-btn>
 
-        <v-btn x-large>Työsuoritteet</v-btn>
+        <v-btn x-large to="/tyosuoritteet">Työsuoritteet</v-btn>
 
-        <v-btn x-large>Kalenteri</v-btn>
+        <v-btn x-large to="/kalenteri">Kalenteri</v-btn>
       </v-btn-toggle>
 
       <v-spacer></v-spacer>
 
-      <v-avatar color="grey lighten-2" size="40">
-        <span class="white--text headline">CJ</span>
+      <v-avatar color="grey lighten-2 profile-link-avatar" size="40">
+        <router-link class="white--text headline profile-link" to="/profiili">CJ</router-link>
       </v-avatar>
     </v-app-bar>
 
@@ -68,3 +70,22 @@ export default {
   })
 };
 </script>
+
+<style scoped>
+.toolbar-title {
+  text-decoration: none !important;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.profile-link {
+  text-decoration: none !important;
+}
+.profile-link-avatar {
+  transition: ease-in-out 0.3s;
+}
+.profile-link-avatar:hover {
+  transform: scale(1.2);
+  transition: ease-in-out 0.3s;
+}
+</style>
