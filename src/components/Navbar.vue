@@ -1,7 +1,10 @@
 <template>
   <div>
     <v-app-bar app flat>
-      <v-app-bar-nav-icon class="d-md-none" @click="drawer = true"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        class="d-md-none"
+        @click="drawer = true"
+      ></v-app-bar-nav-icon>
 
       <v-img
         alt="Vuetify Logo"
@@ -18,7 +21,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn-toggle class="d-none d-md-flex" v-model="text" color="accent-3" group>
+      <v-btn-toggle class="d-none d-md-flex" color="accent-3" group>
         <v-btn x-large to="/tyovuorot">Työvuorot</v-btn>
 
         <v-btn x-large to="/matkakulut">Matkalukut</v-btn>
@@ -31,7 +34,9 @@
       <v-spacer></v-spacer>
 
       <v-avatar color="grey lighten-2 profile-link-avatar" size="40">
-        <router-link class="white--text headline profile-link" to="/profiili">CJ</router-link>
+        <router-link class="white--text headline profile-link" to="/profiili"
+          >CJ</router-link
+        >
       </v-avatar>
     </v-app-bar>
 
@@ -61,13 +66,13 @@
 
 <script>
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   data: () => ({
     // Title
-    title: "Työvuor.ot",
+    title: 'Työvuor.ot',
     drawer: false,
-    group: null
-  })
+    group: null,
+  }),
 };
 </script>
 
