@@ -1,8 +1,8 @@
 <template>
   <v-card class="mx-auto pa-5" outlined>
     <v-text-field
-      label="Matkakulut"
-      placeholder="Lisää uusi matkakulu kilometreinä esim 25"
+      label="Matkakulut kilometreinä"
+      placeholder="Lisää uusi matkakulu numeroina esim 25"
       v-model="travelExp"
       v-on:keyup.enter="addTravelExp"
     >
@@ -14,10 +14,10 @@
       <v-list-item-group color="primary">
         <v-list-item v-for="travelExp in allTravelExps" :key="travelExp.id">
           <v-list-item-content>
-            <v-list-item-title
-              >{{ travelExp.date | moment('D.M.YYYY') }} |
+            <v-list-item-title>
+              {{ travelExp.date | moment('D.M.YYYY') }} |
               {{ travelExp.distance }} km |
-              {{ Math.floor(travelExp.distance * travelExp.price) }}
+              {{ travelExp.price }}
               €
             </v-list-item-title>
           </v-list-item-content>
@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
-  name: 'TravelExp',
+  name: "TravelExp",
   data() {
     return {
-      travelExp: '',
+      travelExp: ""
     };
   },
   methods: {
@@ -42,11 +42,12 @@ export default {
       this.allTravelExps.push({
         id: this.allTravelExps.length,
         distance: parseInt(this.travelExp),
-        price: this.price,
-        date: Date.now(),
+        price: Math.floor(this.travelExp * 0.2),
+        date: new Date()
       });
-    },
+      this.travelExp = "";
+    }
   },
-  computed: mapGetters(['allTravelExps']),
+  computed: mapGetters(["allTravelExps"])
 };
 </script>

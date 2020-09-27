@@ -4,17 +4,17 @@ const state = {
     {
       id: 0,
       hours: 8,
-      date: Date.now(),
+      date: new Date(2020, 0, 30),
     },
     {
       id: 1,
       hours: 5,
-      date: Date.now(),
+      date: new Date(2020, 2, 22),
     },
     {
       id: 2,
       hours: 2,
-      date: Date.now(),
+      date: new Date(2020, 4, 5),
     },
   ],
 };

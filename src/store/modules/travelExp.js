@@ -4,20 +4,20 @@ const state = {
     {
       id: 0,
       distance: 81,
-      price: 0.2,
-      date: Date.now(),
+      price: Math.floor(81 * 0.2),
+      date: new Date(2020, 0, 31),
     },
     {
       id: 1,
       distance: 55,
-      price: 0.2,
-      date: Date.now(),
+      price: Math.floor(55 * 0.2),
+      date: new Date(2020, 3, 2),
     },
     {
       id: 2,
       distance: 23,
-      price: 0.2,
-      date: Date.now(),
+      price: Math.floor(23 * 0.2),
+      date: new Date(2020, 5, 22),
     },
   ],
 };

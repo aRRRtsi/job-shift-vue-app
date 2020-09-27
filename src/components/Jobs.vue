@@ -2,7 +2,7 @@
   <v-card class="mx-auto pa-5" outlined>
     <v-text-field
       label="Työvuorot"
-      placeholder="Lisää uusi työvuoro numeroina esim 8"
+      placeholder="Lisää uusi työsuoritus"
       v-model="job"
       v-on:keyup.enter="addJobShift"
     >
@@ -14,9 +14,11 @@
       <v-list-item-group color="primary">
         <v-list-item v-for="job in allJobs" :key="job.id">
           <v-list-item-content>
-            <v-list-item-title>{{
+            <v-list-item-title>
+              {{
               job.date | moment('D.M.YYYY')
-            }}</v-list-item-title>
+              }}
+            </v-list-item-title>
             <v-list-item-subtitle>{{ job.content }}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
@@ -26,24 +28,25 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
-  name: 'Jobs',
+  name: "Jobs",
   data() {
     return {
-      job: '',
+      job: ""
     };
   },
   methods: {
     addJobShift() {
       this.allJobs.push({
         id: this.allJobs.length,
-        date: Date.now(),
-        content: this.job,
+        date: new Date(),
+        content: this.job
       });
-    },
+      this.job = "";
+    }
   },
-  computed: mapGetters(['allJobs']),
+  computed: mapGetters(["allJobs"])
 };
 </script>

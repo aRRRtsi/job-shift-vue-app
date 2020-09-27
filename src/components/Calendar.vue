@@ -108,14 +108,14 @@ export default {
       "grey darken-1"
     ],
     names: [
-      "Meeting",
-      "Holiday",
+      "Kokous",
+      "Loma",
       "PTO",
-      "Travel",
-      "Event",
-      "Birthday",
-      "Conference",
-      "Party"
+      "Matka",
+      "Tapahtuma",
+      "Syntymäpäivä",
+      "Konferenssi",
+      "Bailut"
     ]
   }),
   mounted() {
